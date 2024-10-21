@@ -83,17 +83,17 @@ jobs:
         with:
           inlineScript: |
             rg=RG-AzureChat
-            echo Setting SCM_DO_BUILD_DURING_DEPLOYMENT=false on app service azurechataibravent
-            az webapp config appsettings set -n azurechataibravent -g $rg --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false -o none
-            echo Setting --startup-file=\"node server.js\" on app service azurechataibravent
-            az webapp config set --startup-file="node server.js" -n azurechataibravent -g $rg -o none
+            echo Setting SCM_DO_BUILD_DURING_DEPLOYMENT=false on app service azurechataibravent-webapp-xnuchv4bo3o3g
+            az webapp config appsettings set -n azurechataibravent-webapp-xnuchv4bo3o3g -g $rg --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false -o none
+            echo Setting --startup-file=\"node server.js\" on app service azurechataibravent-webapp-xnuchv4bo3o3g
+            az webapp config set --startup-file="node server.js" -n azurechataibravent-webapp-xnuchv4bo3o3g -g $rg -o none
             sleep 10
 
       - name: 🚀 Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: azurechataibravent
+          app-name: azurechataibravent-webapp-xnuchv4bo3o3g
           package: ${{ github.workspace }}/Nextjs-site.zip
 
       - name: 🧹 Cleanup
